@@ -63,7 +63,7 @@ public class PostingService {
 
 
 
-    public Long deletePosting(Long id,PostingRequestDto requestDto){
+    public boolean deletePosting(Long id,PostingRequestDto requestDto){
         Posting posting = findPosting(id);
         if(posting.getPassword().equals(requestDto.getPassword())){
             postingRepository.delete(posting);
@@ -71,7 +71,7 @@ public class PostingService {
         }else{
             throw new IllegalArgumentException("비밀번호가 다릅니다");
         }
-        return 1L;
+        return true;
     }
 
     private Posting findPosting(Long id){

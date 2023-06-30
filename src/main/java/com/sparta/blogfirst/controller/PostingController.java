@@ -43,7 +43,7 @@ public class PostingController {
 
 
     @DeleteMapping("/postings/{id}")
-    public Long deleteMemo(@PathVariable Long id, @RequestBody PostingRequestDto requestDto) {
+    public boolean deleteMemo(@PathVariable Long id, @RequestBody PostingRequestDto requestDto) {
 
         return postingService.deletePosting(id, requestDto);
 
