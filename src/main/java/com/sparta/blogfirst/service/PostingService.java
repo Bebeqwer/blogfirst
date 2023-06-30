@@ -52,6 +52,7 @@ public class PostingService {
         Posting posting = findPosting(id);
         if(posting.getPassword().equals(requestDto.getPassword())){
             posting.update(requestDto);
+
             return new PostingResponseDto(posting);
         }else{
             throw new IllegalArgumentException("비밀번호가 다릅니다");

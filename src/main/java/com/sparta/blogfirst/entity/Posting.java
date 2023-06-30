@@ -40,7 +40,6 @@ public class Posting extends Timestamped {
 
     public void update(PostingRequestDto requestDto){
         this.title = requestDto.getTitle();
-        this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
     }
 
